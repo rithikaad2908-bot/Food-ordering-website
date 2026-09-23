@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CampusBite — Good Food. Campus Vibes.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ===================== HEADER / NAV ===================== -->
+<header class="site-header" id="siteHeader">
+  <div class="nav-wrap">
+    <a href="#home" class="brand">
+      <span class="brand-mark">CB</span>
+      <span class="brand-name">CampusBite</span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#menu" class="nav-link">Menu</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" class="icon"><path d="M6 6h15l-1.5 9h-12z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="9.5" cy="20" r="1.4" fill="currentColor"/><circle cx="17.5" cy="20" r="1.4" fill="currentColor"/><path d="M3 3h2l1 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow">CampusBite · Student food, sorted</p>
+      <h1>Your campus cravings,<br>delivered.</h1>
+      <p class="hero-sub">Order from your favourite canteen stalls in a couple of taps. Real menu, real fast — no queue, no hassle.</p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn btn-primary">Order Now</a>
+        <a href="#about" class="btn btn-ghost">How it works</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>15+</strong><span>Menu items</span></div>
+        <div><strong>6</strong><span>Categories</span></div>
+        <div><strong>20–30 min</strong><span>Avg. prep time</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="ticket">
+        <div class="ticket-head">
+          <span>CampusBite</span>
+          <span class="ticket-dot"></span>
+        </div>
+        <p class="ticket-sub">Live order ticket · demo</p>
+        <ul class="ticket-lines" id="tickerLines">
+          <li><span>🍔 Chicken Burger</span><span>₹149</span></li>
+          <li><span>🍟 French Fries</span><span>₹79</span></li>
+          <li><span>🥤 Cold Coffee</span><span>₹89</span></li>
+        </ul>
+        <div class="ticket-total"><span>Total</span><span>₹317</span></div>
+        <div class="ticket-tear"></div>
+      </div>
+      <div class="floating-chip chip-1">⭐ 4.8 rated</div>
+      <div class="floating-chip chip-2">🔥 Hot &amp; fresh</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CATEGORIES ===================== -->
+<section class="categories" id="categories">
+  <div class="section-inner">
+    <h2>Browse by category</h2>
+    <div class="category-grid" id="categoryGrid">
+      <!-- filled by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MENU ===================== -->
+<section class="menu" id="menu">
+  <div class="section-inner">
+    <div class="menu-heading">
+      <h2>Full menu</h2>
+      <p>Fresh picks from every canteen stall on campus.</p>
+    </div>
+
+    <div class="menu-controls">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" class="icon"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M20 20l-4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <input type="text" id="searchInput" placeholder="Search for burgers, pizza, drinks..." />
+      </div>
+      <div class="filter-chips" id="filterChips">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="Pizza">Pizza</button>
+        <button class="chip" data-filter="Burgers">Burgers</button>
+        <button class="chip" data-filter="Meals">Meals</button>
+        <button class="chip" data-filter="Snacks">Snacks</button>
+        <button class="chip" data-filter="Desserts">Desserts</button>
+        <button class="chip" data-filter="Drinks">Drinks</button>
+      </div>
+    </div>
+
+    <div class="menu-grid" id="menuGrid">
+      <!-- filled by JS -->
+    </div>
+    <p class="no-results" id="noResults" hidden>No dishes match your search. Try a different keyword or category.</p>
+  </div>
+</section>
+
+<!-- ===================== WHY CHOOSE US ===================== -->
+<section class="why" id="why">
+  <div class="section-inner">
+    <h2>Why students choose CampusBite</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-icon">⚡</span>
+        <h3>Quick ordering</h3>
+        <p>Browse, add to cart and check out in under a minute — built for between-class ordering.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🎓</span>
+        <h3>Student-friendly prices</h3>
+        <p>Honest, canteen-level pricing with no hidden fees or surprise charges at checkout.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">📍</span>
+        <h3>Easy tracking</h3>
+        <p>Get a clear order number and prep-time estimate so you know exactly when to swing by.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🍳</span>
+        <h3>Fresh food</h3>
+        <p>Every stall on CampusBite cooks to order — nothing sits around waiting for you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REVIEWS ===================== -->
+<section class="reviews" id="reviews">
+  <div class="section-inner">
+    <h2>What students are saying</h2>
+    <p class="demo-note">Sample / demo reviews shown for illustration — not real verified customers.</p>
+    <div class="reviews-track" id="reviewsTrack">
+      <!-- filled by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="about" id="about">
+  <div class="section-inner about-grid">
+    <div>
+      <h2>About CampusBite</h2>
+      <p>CampusBite is a fictional college food-ordering platform built as a technical club project. It's designed to show what a fast, friendly campus food-ordering experience could look like — from browsing the menu to picking up a hot order between classes.</p>
+      <p>This site is a demo: all stalls, items, ratings, reviews and orders are sample data created for demonstration purposes, not a real business.</p>
+    </div>
+    <div class="about-steps">
+      <div class="step"><span class="step-num">1</span><div><h4>Browse the menu</h4><p>Search or filter by category to find what you're craving.</p></div></div>
+      <div class="step"><span class="step-num">2</span><div><h4>Add to cart</h4><p>Pick your quantity and build your order.</p></div></div>
+      <div class="step"><span class="step-num">3</span><div><h4>Checkout</h4><p>Drop your name, number and hostel/campus location.</p></div></div>
+      <div class="step"><span class="step-num">4</span><div><h4>Pick it up</h4><p>Get a demo order number and estimated prep time.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="contact" id="contact">
+  <div class="section-inner contact-grid">
+    <div>
+      <h2>Get in touch</h2>
+      <p class="demo-note">Demo contact details — for project demonstration only.</p>
+      <ul class="contact-list">
+        <li>📍 Student Activity Block, Main Campus</li>
+        <li>📞 +91 98765 43210 (demo)</li>
+        <li>✉️ hello@campusbite.demo</li>
+        <li>🕒 9:00 AM – 10:00 PM, all days</li>
+      </ul>
+    </div>
+    <form class="contact-form" id="contactForm">
+      <label>Name<input type="text" placeholder="Your name" required /></label>
+      <label>Message<textarea rows="3" placeholder="Say hello..." required></textarea></label>
+      <button type="submit" class="btn btn-primary">Send message</button>
+      <p class="form-note" id="contactNote" hidden>This is a demo form — messages aren't actually sent anywhere.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="section-inner footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark">CB</span>
+      <span class="brand-name">CampusBite</span>
+      <p>Good Food. Campus Vibes.</p>
+    </div>
+    <div>
+      <h5>Quick links</h5>
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div>
+      <h5>Categories</h5>
+      <a href="#menu" data-cat="Pizza">Pizza</a>
+      <a href="#menu" data-cat="Burgers">Burgers</a>
+      <a href="#menu" data-cat="Meals">Meals</a>
+      <a href="#menu" data-cat="Desserts">Desserts</a>
+    </div>
+    <div>
+      <h5>Follow</h5>
+      <div class="social-row">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Twitter/X">X</a>
+        <a href="#" aria-label="Facebook">FB</a>
+      </div>
+    </div>
+  </div>
+  <p class="copyright">© 2026 CampusBite — a demo project for the CodeCrafters technical club. Not a real business.</p>
+</footer>
+
+<!-- ===================== FOOD DETAIL MODAL ===================== -->
+<div class="overlay" id="detailOverlay">
+  <div class="modal detail-modal" id="detailModal">
+    <button class="modal-close" data-close>&times;</button>
+    <div class="detail-body" id="detailBody"><!-- filled by JS --></div>
+  </div>
+</div>
+
+<!-- ===================== CART DRAWER ===================== -->
+<div class="overlay" id="cartOverlay">
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-head">
+      <h3>Your cart</h3>
+      <button class="modal-close" data-close>&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems"><!-- filled by JS --></div>
+    <div class="cart-empty" id="cartEmpty">
+      <p>🛒 Your cart is empty.</p>
+      <a href="#menu" class="btn btn-ghost" data-close>Browse the menu</a>
+    </div>
+    <div class="cart-summary" id="cartSummary">
+      <div class="summary-row"><span>Subtotal</span><span id="cartSubtotal">₹0</span></div>
+      <div class="summary-row"><span>Delivery</span><span>₹0 (campus demo)</span></div>
+      <div class="summary-row total"><span>Total</span><span id="cartTotal">₹0</span></div>
+      <button class="btn btn-ghost btn-block" data-close>Continue shopping</button>
+      <button class="btn btn-primary btn-block" id="checkoutBtn">Proceed to checkout</button>
+    </div>
+  </aside>
+</div>
+
+<!-- ===================== CHECKOUT MODAL ===================== -->
+<div class="overlay" id="checkoutOverlay">
+  <div class="modal checkout-modal">
+    <button class="modal-close" data-close>&times;</button>
+    <h3>Checkout</h3>
+    <p class="demo-note">Demo checkout — no real payment or delivery, this is a project simulation.</p>
+    <form id="checkoutForm" novalidate>
+      <label>Student name
+        <input type="text" id="custName" placeholder="e.g. Aditi Sharma" />
+        <span class="field-error" id="err-custName"></span>
+      </label>
+      <label>Phone number
+        <input type="tel" id="custPhone" placeholder="10-digit number" />
+        <span class="field-error" id="err-custPhone"></span>
+      </label>
+      <label>Campus / hostel location
+        <input type="text" id="custLocation" placeholder="e.g. Block C, Room 214" />
+        <span class="field-error" id="err-custLocation"></span>
+      </label>
+      <label>Delivery instructions (optional)
+        <textarea id="custNotes" rows="2" placeholder="Leave at the gate, call on arrival, etc."></textarea>
+      </label>
+
+      <div class="order-summary" id="checkoutSummary"><!-- filled by JS --></div>
+
+      <button type="submit" class="btn btn-primary btn-block">Place Order</button>
+    </form>
+  </div>
+</div>
+
+<!-- ===================== CONFIRMATION MODAL ===================== -->
+<div class="overlay" id="confirmOverlay">
+  <div class="modal confirm-modal">
+    <div class="confirm-check">✓</div>
+    <h3>Order placed successfully!</h3>
+    <p class="demo-note">Demo order — nothing was actually charged or delivered.</p>
+    <div class="confirm-card">
+      <div class="confirm-row"><span>Order number</span><strong id="confirmOrderNum">#CB00000</strong></div>
+      <div class="confirm-row"><span>Estimated prep time</span><strong id="confirmPrepTime">20–30 minutes</strong></div>
+      <div class="confirm-row"><span>Delivery location</span><strong id="confirmLocation">—</strong></div>
+      <hr />
+      <div id="confirmItems"><!-- filled by JS --></div>
+      <hr />
+      <div class="confirm-row total"><span>Total paid (demo)</span><strong id="confirmTotal">₹0</strong></div>
+    </div>
+    <button class="btn btn-primary btn-block" id="backToMenuBtn">Back to menu</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
